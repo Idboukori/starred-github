@@ -13,6 +13,10 @@ Run the app using this command : npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+### `Demo`
+
+![Demo](https://user-images.githubusercontent.com/46156538/92410528-ac5bf800-f144-11ea-9d6e-568b13505e61.gif)
+
 ### `Author`
 Linkedin profile : [Idboukori Ali](https://www.linkedin.com/in/ali-idboukori/ "Linkedin")
 
