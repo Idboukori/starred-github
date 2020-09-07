@@ -16,9 +16,9 @@ export default (state = INIT_STATE,action) =>{
         case FETCH_REPOS:
             return{...state,loading: true, error: false};
         case FETCH_REPOS_SUCCESS:
-            return{...state,loading: false, repositories: action.payload.items};
+            return{...state,loading: false, repositories: [...state.repositories , ...action.payload.items]};
         case FETCH_REPOS_FAILURE:
-            return{...state, loading: false, error: action.payload.error,repositories: []};
+            return{...state, loading: false, error: true};
         default:
             return {...state}
     }

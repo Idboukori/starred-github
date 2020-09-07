@@ -8,6 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import CardActionArea from '@material-ui/core/CardActionArea';
 import StarIcon from '@material-ui/icons/Star';
 import ErrorIcon from '@material-ui/icons/Error';
+import WatchLaterIcon from '@material-ui/icons/WatchLater';
+import moment from 'moment';
+
 class Cards extends Component {
 
     constructor(props){
@@ -36,8 +39,7 @@ class Cards extends Component {
                             avatar={
                                 <Avatar
                                     alt="Remy Sharp"
-                                    src={'https://avatars2.githubusercontent.com/u/747750?v=4'}
-                                    style={{background : "#ffffff"}}
+                                    src={repo['owner']['avatar_url']}
                                 />
                             }
                             title={<Typography variant="inherit" component="h4">{repo['name']}</Typography>}
@@ -49,6 +51,8 @@ class Cards extends Component {
                             <Typography variant="body2"  component="h3">{repo['stargazers_count']}</Typography>
                             <ErrorIcon fontSize="small" color="secondary"/>
                             <Typography variant="body2"  component="h3">{repo['open_issues']}</Typography>
+                            <WatchLaterIcon fontSize="small" />
+                            <Typography variant="body2"  component="h3">Created {moment(repo.created_at).fromNow()} By {repo['owner']['login']}</Typography>
                         </CardActions>
                     </CardActionArea>
                 </Card>

@@ -21,11 +21,10 @@ const fetchRepositoriesFailure = (error)=>({
     payload : error
 });
 
-export const getRepositories = (last30days) => dispatch =>{
+export const getRepositories = (last30days,page) => dispatch =>{
     dispatch(fetchRepositories);
     Api()
-        .getrepos(last30days).then(res => res.json()).then( json =>{
-            console.log(json);
+        .getrepos(last30days,page).then(res => res.json()).then( json =>{
         dispatch(fetchRepositoriesSuccess(json));
     }).catch(error => {
         dispatch(fetchRepositoriesFailure(error.message))
